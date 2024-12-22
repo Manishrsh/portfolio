@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cardcss {
+    @apply bg-gradient-to-br from-[#271e55] to-[#100b28] 
+    border border-[#aa7dfc40] rounded-xl 
+    flex flex-col justify-between items-center 
+    w-full max-w-full max-h-[524px] 
+    p-8 
+    no-underline;
+  }
+  
+  .cardcss:hover {
+    @apply shadow-allway;
+  }
+  .formcss{
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px;
+  }
+  
