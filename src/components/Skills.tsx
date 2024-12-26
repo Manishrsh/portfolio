@@ -1,11 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaReact, FaNodeJs, FaGit, FaDocker, FaAws, FaPython } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiPostgresql, SiMongodb, SiFirebase, SiNextdotjs, SiCypress,SiGrafana, SiFigma , SiGithubactions } from 'react-icons/si';
 
 const skills = {
-  Frontend: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
-  Backend: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB'],
-  Tools: ['Git', 'Docker', 'AWS', 'Firebase'],
-  Other: ['UI/UX Design', 'Agile', 'Testing', 'CI/CD'],
+  Frontend: [
+    { name: 'React', icon: <FaReact /> },
+    { name: 'TypeScript', icon: <SiTypescript /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+    { name: 'Next.js', icon: <SiNextdotjs /> },
+  ],
+  Backend: [
+    { name: 'Node.js', icon: <FaNodeJs /> },
+    { name: 'Python', icon: <FaPython /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql /> },
+    { name: 'MongoDB', icon: <SiMongodb /> },
+  ],
+  Tools: [
+    { name: 'Git', icon: <FaGit /> },
+    { name: 'Docker', icon: <FaDocker /> },
+    { name: 'AWS', icon: <FaAws /> },
+    { name: 'Firebase', icon: <SiFirebase /> },
+  ],
+  Other: [    
+    { name: 'Monitoring', icon: <SiGrafana/> }, // Add appropriate icon or leave null
+    { name: 'Testing', icon: <SiCypress /> },
+    { name: 'CI/CD', icon: <SiGithubactions /> }, // Add appropriate icon or leave null
+  ],
 };
 
 export function Skills() {
@@ -14,7 +35,7 @@ export function Skills() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, 
+        staggerChildren: 0.3,
       },
     },
   };
@@ -32,7 +53,6 @@ export function Skills() {
     <section id="skills" className="py-20 bg-backgoundmain relative overflow-hidden">
       {/* Left Rounded Blur Effect */}
       <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-[#271e55] to-transparent blur-3xl rounded-full pointer-events-none" />
-
       {/* Right Rounded Blur Effect */}
       <div className="absolute -right-16 top-1/2 transform -translate-y-1/2 w-80 h-80 bg-gradient-to-l from-[#271e55] to-transparent blur-3xl rounded-full pointer-events-none" />
 
@@ -47,7 +67,7 @@ export function Skills() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2 }} 
+          viewport={{ amount: 0.2 }}
         >
           {Object.entries(skills).map(([category, items]) => (
             <motion.div
@@ -56,14 +76,18 @@ export function Skills() {
               variants={cardVariants}
             >
               <h3 className="text-2xl font-semibold text-purple-400 mb-4">{category}</h3>
-              <ul className="space-y-2">
-                {items.map((skill) => (
+              <ul className="space-y-4">
+                {items.map(({ name, icon }) => (
                   <li
-                    key={skill}
-                    className="text-gray-300 flex items-center text-xl font-semibold"
+                    key={name}
+                    className="flex items-center space-x-4 text-gray-300 text-xl font-semibold"
                   >
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    {skill}
+                    {icon && (
+                      <div className="text-purple-500 text-2xl">
+                        {icon}
+                      </div>
+                    )}
+                    <span>{name}</span>
                   </li>
                 ))}
               </ul>

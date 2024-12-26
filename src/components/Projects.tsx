@@ -1,7 +1,9 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import freeHostimg from '../assets/freeHostimage.png';
+import movies from '../assets/movies.jpg';
 import { motion } from 'framer-motion';
+import Opnion from '../assets/Opnion.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,7 +36,7 @@ const projects = [
   {
     title: 'Movie Platform',
     description: 'Developed a movie platform using React that is main motive to bulid to sort best movie and tv show to pepople see best movie and tv show',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    image: `${movies}`,
     tags: ['React', 'Scss', 'tailwind css'],
     github: 'https://github.com',
     demo: 'https://movies.manishmoneymanage.tech'
@@ -42,11 +44,35 @@ const projects = [
   {
     title: 'Opinion-Paltform',
     description: 'Social media platform for sharing opinions and insights',
+    image: `${Opnion}`,
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    github: 'https://github.com',
+    demo: 'https://example.com'
+  },
+  {
+    title: 'Dynamic e-commerce Luncher ( In Devolpment.. )',
+    description: 'Social media platform for sharing opinions and insights',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     github: 'https://github.com',
     demo: 'https://example.com'
-  }
+  },
+  {
+    title: 'Uptime Monitoring Platform ( In Devolpment.. )' ,
+    description: 'Designed and developed an uptime monitoring platform to track website and server availability in real-time. ',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS' , 'redis' , 'docker'],
+    github: 'https://github.com',
+    demo: 'https://example.com'
+  },
+  {
+    title: 'Cloud IDE ( In Devolpment.. )',
+    description: 'Social media platform for sharing opinions and insights',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'docker'],
+    github: 'https://github.com',
+    demo: 'https://example.com'
+  },
 ];
 
 export function Projects() {
